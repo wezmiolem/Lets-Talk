@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Add new question</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <h1>Add new question</h1>
-    <form action="{{ url_for('add_question_post') }}" method="post">
+    <form class="center" action="{{ url_for('add_question_post') }}" method="post">
     <label for="type">Type of a question:</label>
         <input type="text" name="type" id="type">
     <br>
@@ -16,6 +16,7 @@
     <br>
     <label for="image">Image link:</label>
         <input type="text" name="image" id="image">
+    <br>
         <input type="submit" value="Add new question">
     </form>
 
