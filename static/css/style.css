@@ -1,3 +1,9 @@
+h1 {
+    color: darkblue;
+}
+h2 {
+    text-align: center !important;
+}
 body {
     text-align: center;
 }
@@ -11,8 +17,8 @@ table {
 }
 
 td, th {
-  border: 1px solid #999;
-  text-align: left;
+    border: 1px solid darkblue;
+    text-align: left;
 }
 
 .center {
@@ -26,5 +32,13 @@ td a {
 }
 
 tr:hover {
-   background: lightblue;
+   background: darkcyan !important;
 }
+
+tr:hover td {
+    background: transparent;
+}
+
+
+tr:nth-child(even) {background: lightblue}
+tr:nth-child(odd) {background: aliceblue}

@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Add new question</h1>
+    <h1><a href={{ url_for('index') }} >Let's talk</a></h1>
+    <h2>Add new question</h2>
     <form class="center" action="{{ url_for('add_question_post') }}" method="post">
     <label for="type">Type of a question:</label>
         <input type="text" name="type" id="type">
