@@ -29,7 +29,7 @@ def question_and_answers(question_id):
     answers = util.get_answers()
     answers_for_question = util.get_answers_for_question(question_id, answers)
     return render_template('question_and_answers.html', question=question,
-                           answers_for_question=answers_for_question)
+                           answers_for_question=answers_for_question, question_id=question_id)
 
 
 @app.route('/add_question')
@@ -52,5 +52,29 @@ def add_question_post():
     return redirect(url_for('question_and_answers', question_id=new_question['id']))
 
 
+@app.route('/questions/<question_id>/new-answer')
+def add_answer(question_id):
+    return render_template('new_answer.html', question_id=question_id)
+
+
+@app.route('/questions/<question_id>/new-answer/post', methods=['POST'])
+def add_answer_post(question_id):
+    answer_keys = util.get_answer_keys()
+    new_answer = dict.fromkeys(answer_keys, None)
+    answers = util.get_answers()
+    answer_data = dict(request.form)
+    answer_data['question_id'] = int(question_id)
+    answer_data['id'] = util.get_new_id(answers)
+    answer_data['submission_time'] = 'now'
+    answer_data['vote_number'] = 0
+    new_answer.update(answer_data)
+    util.add_to_data(answers, new_answer)
+    return redirect(url_for('question_and_answers', question_id=question_id))
+
+
 if __name__ == '__main__':
     app.run()
+
+
+
+

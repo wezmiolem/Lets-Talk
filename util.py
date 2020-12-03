@@ -18,6 +18,10 @@ def get_question_keys():
     return mock_data.question_keys
 
 
+def get_answer_keys():
+    return mock_data.answer_keys
+
+
 def get_question_types(questions):
     question_types = [question['type'] for question in questions]
     return Counter(question_types)

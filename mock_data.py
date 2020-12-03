@@ -12,6 +12,8 @@ questions = [{'id': 0, 'submission_time': 'today', 'view_number': 10, 'vote_numb
              {'id': 3, 'submission_time': 'yesterday', 'view_number': 1, 'vote_number': 3, 'type': 'unknown',
               'message': 'wasssup?', 'image': 'None'}]
 
+answer_keys = ['id', 'submission_time', 'vote_number', 'question_id', 'message', 'image']
+
 answers = [{'id': 0, 'submission_time': 'now', 'vote_number': 10, 'question_id': 0, 'message': 'of course',
             'image': 'None'},
            {'id': 1, 'submission_time': 'now', 'vote_number': 2, 'question_id': 1, 'message': 'not rly. nope',
