@@ -26,7 +26,7 @@
                     <td>
                         <a href={{ url_for('list_of_questions', category=key) }}>
                             <h3>{{ key }}</h3>
-                            <p>number of topics: {{ value }} total answers:</p>
+                            <p>number of topics: {{ value }} total answers: {{ answers_for_each_type[key] }}</p>
                         </a>
                     </td>
                 </tr>

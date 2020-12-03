@@ -9,8 +9,9 @@ def index():
     questions = util.get_questions()
     question_types = util.get_question_types(questions)
     answers = util.get_answers()
+    answers_for_each_type = util.num_of_answers_for_each_type(questions, answers)
     return render_template('index.html', question_types=question_types, questions=questions,
-                           answers=answers)
+                           answers=answers, answers_for_each_type=answers_for_each_type)
 
 
 @app.route('/list/<category>')
