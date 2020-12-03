@@ -12,11 +12,19 @@ table {
 
 td, th {
   border: 1px solid #999;
-  padding: 0.5rem;
   text-align: left;
 }
 
 .center {
   margin-left: auto;
   margin-right: auto;
+}
+
+td a {
+   display: block;
+   padding: 16px;
+}
+
+tr:hover {
+   background: lightblue;
 }

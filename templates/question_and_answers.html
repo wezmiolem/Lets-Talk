@@ -10,7 +10,7 @@
 <thead>
 <tr>
     <td>
-        <h1>Question: {{ question[0]['message'] }}</h1>
+        <h2>Question: {{ question[0]['message'] }}</h2>
     </td>
 </tr>
 </thead>
@@ -18,7 +18,7 @@
 {% for answer in answers_for_question %}
     <tr>
         <td>
-            <h2>{{ answer['message'] }}</h2>
+            <h3>{{ answer['message'] }}</h3>
             <p> Time of submission: {{ answer['submission_time']}} Rating: {{ answer['vote_number'] }}</p>
         </td>
     </tr>

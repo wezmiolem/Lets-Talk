@@ -6,28 +6,26 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-<h1>Category: {{ category }}</h1>
+<h1>Let's Talk</h1>
     <table class="center">
         <thead>
             <tr>
-                {% for header in question_headers %}
-                    <th>
-                        {{ header }}
-                    </th>
-                {% endfor %}
+                <td>
+                    <h2>Category: {{ category }}</h2>
+                </td>
             </tr>
         </thead>
         <tbody>
             {% for question in questions_of_category %}
                 <tr>
-                    {% for key in question.keys() %}
-                        <td>
-                            <a href="{{ url_for('question_and_answers', question_id=question['id']) }}">
-
-                                {{ question[key] }}
-                            </a>
-                        </td>
-                    {% endfor %}
+                    <td>
+                        <a href="{{ url_for('question_and_answers', question_id=question['id']) }}">
+                            <h3>{{ question['message'] }}</h3>
+                            <p>submission time: {{ question['submission_time'] }},
+                                number of views: {{ question['view_number'] }},
+                                rating: {{ question['vote_number'] }}</p>
+                        </a>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>
