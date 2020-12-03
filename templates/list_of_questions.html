@@ -21,9 +21,12 @@
             {% for question in questions_of_category %}
                 <tr>
                     {% for key in question.keys() %}
-                        <th>
-                            {{ question[key] }}
-                        </th>
+                        <td>
+                            <a href="{{ url_for('question_and_answers', question_id=question['id']) }}">
+
+                                {{ question[key] }}
+                            </a>
+                        </td>
                     {% endfor %}
                 </tr>
             {% endfor %}

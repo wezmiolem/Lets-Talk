@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>question id: {{ question[0]['id'] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-
+<table class="center">
+<thead>
+<tr>
+    <td>
+        <h1>Question: {{ question[0]['message'] }}</h1>
+    </td>
+</tr>
+</thead>
+<tbody>
+{% for answer in answers_for_question %}
+    <tr>
+        <td>
+            <h2>{{ answer['message'] }}</h2>
+            <p> Time of submission: {{ answer['submission_time']}} Rating: {{ answer['vote_number'] }}</p>
+        </td>
+    </tr>
+{% endfor %}
+</tbody>
+</table>
 </body>
 </html>

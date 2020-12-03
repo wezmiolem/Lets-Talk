@@ -25,6 +25,15 @@ def get_questions_of_category(questions, category):
     return [question for question in questions if question['type'] == category]
 
 
+def get_question_by_id(questions, question_id):
+    return [question for question in questions if question['id'] == int(question_id)]
+
+
+def get_answers_for_question(question_id, answers):
+    return [answer for answer in answers if answer['question_id'] == int(question_id)]
+
+
+
 
 
 
