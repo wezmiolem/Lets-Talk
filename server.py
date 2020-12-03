@@ -44,7 +44,7 @@ def add_question_post():
     questions = util.get_questions()
     question_data = dict(request.form)
     question_data['id'] = util.get_new_id(questions)
-    question_data['submission_time'] = 'now'
+    question_data['submission_time'] = util.get_current_datetime_string()
     question_data['view_number'] = 0
     question_data['vote_number'] = 0
     new_question.update(question_data)
@@ -65,7 +65,7 @@ def add_answer_post(question_id):
     answer_data = dict(request.form)
     answer_data['question_id'] = int(question_id)
     answer_data['id'] = util.get_new_id(answers)
-    answer_data['submission_time'] = 'now'
+    answer_data['submission_time'] = util.get_current_datetime_string()
     answer_data['vote_number'] = 0
     new_answer.update(answer_data)
     util.add_to_data(answers, new_answer)

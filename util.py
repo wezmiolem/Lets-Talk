@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import mock_data
 from collections import Counter
 
@@ -44,6 +46,13 @@ def get_answers_for_question(question_id, answers):
 def get_new_id(listed_dicts):
     current_ids = [sentence['id'] for sentence in listed_dicts]
     return max(current_ids)+1
+
+
+def get_current_datetime_string():
+    now = datetime.now()
+    date_time_str = now.strftime("%d/%m/%Y %H:%M:%S")
+    return date_time_str
+
 
 
 def add_to_data(listed_dicts, question):
