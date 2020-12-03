@@ -14,6 +14,10 @@ def get_answers():
     return mock_data.answers
 
 
+def get_question_keys():
+    return mock_data.question_keys
+
+
 def get_question_types(questions):
     question_types = [question['type'] for question in questions]
     return Counter(question_types)
@@ -31,6 +35,16 @@ def get_question_by_id(questions, question_id):
 
 def get_answers_for_question(question_id, answers):
     return [answer for answer in answers if answer['question_id'] == int(question_id)]
+
+
+def get_new_id(listed_dicts):
+    current_ids = [sentence['id'] for sentence in listed_dicts]
+    return max(current_ids)+1
+
+
+def add_to_data(listed_dicts, question):
+    listed_dicts.append(question)
+
 
 
 

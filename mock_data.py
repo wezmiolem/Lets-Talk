@@ -1,6 +1,8 @@
 question_headers = ['Question ID', 'Time of a submission', 'number of views', 'number of votes', 'type of a question',
                     'question message', 'question image']
 
+question_keys = ['id', 'submission_time', 'view_number', 'vote_number', 'type', 'message', 'image']
+
 questions = [{'id': 0, 'submission_time': 'today', 'view_number': 10, 'vote_number': 5, 'type': 'general',
              'message': 'to be or not to be?', 'image': 'None'},
              {'id': 1, 'submission_time': 'yesterday', 'view_number': 8, 'vote_number': 5, 'type': 'personal',
