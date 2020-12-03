@@ -6,6 +6,8 @@ questions = [{'id': 0, 'submission_time': 'today', 'view_number': 10, 'vote_numb
              {'id': 1, 'submission_time': 'yesterday', 'view_number': 8, 'vote_number': 5, 'type': 'personal',
               'message': 'you talkin to me?', 'image': 'None'},
              {'id': 2, 'submission_time': 'tomorrow', 'view_number': 7, 'vote_number': 5, 'type': 'unknown',
+              'message': 'wasssup?', 'image': 'None'},
+             {'id': 3, 'submission_time': 'yesterday', 'view_number': 1, 'vote_number': 3, 'type': 'unknown',
               'message': 'wasssup?', 'image': 'None'}]
 
 answers = [{'id': 0, 'submission_time': 'now', 'vote_number': 10, 'question_id': 0, 'message': 'of course',
@@ -22,4 +24,3 @@ answers = [{'id': 0, 'submission_time': 'now', 'vote_number': 10, 'question_id':
             'image': 'None'},
            {'id': 6, 'submission_time': 'now', 'vote_number': 3, 'question_id': 0, 'message': 'for sure',
             'image': 'None'}]
-

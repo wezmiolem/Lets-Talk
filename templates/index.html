@@ -7,6 +7,24 @@
 </head>
 <body>
 <h1>Let's Talk</h1>
+<table class="center">
+    <tr>
+        <td>
+            <a href={{ url_for('list_of_questions', category='all') }}>
+                All categories, number of topics: {{ questions|length }}, total answers: {{ answers|length }}
+            </a>
+        </td>
+    </tr>
+            {% for key, value in question_types.items() %}
+                <tr>
+                    <td>
+                        <a href={{ url_for('list_of_questions', category=key) }}>
+                    {{ key }}, number of topics: {{ value }} total answers:
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
 
+</table>
 </body>
 </html>
