@@ -26,7 +26,7 @@ def list_of_questions(category):
 @app.route('/questions/<question_id>')
 def question_and_answers(question_id):
     questions = util.get_questions()
-    question = util.get_question_by_id(questions, question_id)
+    question = util.get_data_by_id(questions, question_id)
     answers = util.get_answers()
     answers_for_question = util.get_answers_for_question(question_id, answers)
     return render_template('question_and_answers.html', question=question,
@@ -70,6 +70,26 @@ def add_answer_post(question_id):
     answer_data['vote_number'] = 0
     new_answer.update(answer_data)
     util.add_to_data(answers, new_answer)
+    return redirect(url_for('question_and_answers', question_id=question_id))
+
+
+@app.route('/question/<answer_id>/vote_up')
+def add_answer_rating(answer_id):
+    answers = util.get_answers()
+    listed_answer = util.get_data_by_id(answers, answer_id)
+    answer_to_change = listed_answer[0]
+    answer_to_change['vote_number'] += 1
+    question_id = answer_to_change['question_id']
+    return redirect(url_for('question_and_answers', question_id=question_id))
+
+
+@app.route('/question/<answer_id>/vote_down')
+def deduct_answer_rating(answer_id):
+    answers = util.get_answers()
+    listed_answer = util.get_data_by_id(answers, answer_id)
+    answer_to_change = listed_answer[0]
+    answer_to_change['vote_number'] -= 1
+    question_id = answer_to_change['question_id']
     return redirect(url_for('question_and_answers', question_id=question_id))
 
 

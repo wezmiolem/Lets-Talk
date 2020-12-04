@@ -35,8 +35,8 @@ def get_questions_of_category(questions, category):
     return [question for question in questions if question['type'] == category]
 
 
-def get_question_by_id(questions, question_id):
-    return [question for question in questions if question['id'] == int(question_id)]
+def get_data_by_id(listed_dicts, data_id):
+    return [sentence for sentence in listed_dicts if sentence['id'] == int(data_id)]
 
 
 def get_answers_for_question(question_id, answers):
@@ -59,6 +59,6 @@ def add_to_data(listed_dicts, dict_data):
 
 
 def num_of_answers_for_each_type(questions, answers):
-    answer_types = [question['type'] for question in questions for answer in answers if
-                    question['id'] == answer['question_id']]
+    answer_types = [question['type'] for question in questions for answer in answers
+                    if question['id'] == answer['question_id']]
     return Counter(answer_types)

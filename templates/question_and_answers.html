@@ -23,6 +23,13 @@
             <h3>{{ answer['message'] }}</h3>
             <p> Time of submission: {{ answer['submission_time']}} Rating: {{ answer['vote_number'] }}</p>
         </td>
+        <td>
+            <a href={{ url_for('add_answer_rating', answer_id=answer['id']) }}>Vote up</a>
+        </td>
+        <td>
+            <a href={{ url_for('deduct_answer_rating', answer_id=answer['id']) }}>Vote down</a>
+        </td>
+
     </tr>
 {% endfor %}
 </tbody>
