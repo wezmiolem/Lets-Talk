@@ -7,17 +7,13 @@
 </head>
 <body>
 <h1><a href={{ url_for('index') }} >Let's talk</a></h1>
-<h3><a href={{ url_for('add_question') }}>Add a question</a></h3>
+<h2><a href={{ url_for('add_question') }}>Add a question</a></h2>
 <table class="center">
     <tr>
         <td>
             <a href={{ url_for('list_of_questions', category='all') }}>
-                <h2>
-                All categories
-                </h2>
-            <p>
-                    number of topics: {{ questions|length }}, total answers: {{ answers|length }}
-            </p>
+                <h2>All categories</h2>
+            <p>number of topics: {{ questions|length }}, total answers: {{ answers|length }}</p>
             </a>
         </td>
     </tr>

@@ -31,14 +31,9 @@ td a {
    padding: 16px;
 }
 
-tr:hover {
+td:hover {
    background: darkcyan !important;
 }
-
-tr:hover td {
-    background: transparent;
-}
-
 
 tr:nth-child(even) {background: lightblue}
 tr:nth-child(odd) {background: aliceblue}

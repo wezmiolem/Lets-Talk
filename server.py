@@ -75,7 +75,3 @@ def add_answer_post(question_id):
 
 if __name__ == '__main__':
     app.run()
-
-
-
-

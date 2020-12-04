@@ -54,19 +54,11 @@ def get_current_datetime_string():
     return date_time_str
 
 
-def add_to_data(listed_dicts, question):
-    listed_dicts.append(question)
+def add_to_data(listed_dicts, dict_data):
+    listed_dicts.append(dict_data)
 
 
 def num_of_answers_for_each_type(questions, answers):
     answer_types = [question['type'] for question in questions for answer in answers if
                     question['id'] == answer['question_id']]
     return Counter(answer_types)
-
-
-
-
-
-
-
-
