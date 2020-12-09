@@ -17,10 +17,8 @@ def index():
 @app.route('/list/<category>')
 def list_of_questions(category):
     questions = util.get_questions()
-    question_headers = util.get_question_headers()
     questions_of_category = util.get_questions_of_category(questions, category)
-    return render_template('list_of_questions.html', questions_of_category=questions_of_category,
-                           question_headers=question_headers, category=category)
+    return render_template('list_of_questions.html', questions_of_category=questions_of_category, category=category)
 
 
 @app.route('/questions/<question_id>')
@@ -91,6 +89,13 @@ def deduct_answer_rating(answer_id):
     answer_to_change['vote_number'] -= 1
     question_id = answer_to_change['question_id']
     return redirect(url_for('question_and_answers', question_id=question_id))
+
+
+@app.route('/question/<question_id>/delete')
+def delete_question(question_id):
+    questions = util.get_questions()
+    util.remove_from_data(questions, question_id)
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':

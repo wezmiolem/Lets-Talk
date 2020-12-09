@@ -26,6 +26,11 @@
                                 rating: {{ question['vote_number'] }}</p>
                         </a>
                     </td>
+                    <td>
+                        <a href="{{ url_for('delete_question', question_id=question['id']) }}">
+                            Delete question
+                        </a>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>

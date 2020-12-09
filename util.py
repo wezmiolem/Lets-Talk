@@ -1,7 +1,6 @@
 from datetime import datetime
-
-import mock_data
 from collections import Counter
+import mock_data
 
 
 def get_questions():
@@ -62,3 +61,8 @@ def num_of_answers_for_each_type(questions, answers):
     answer_types = [question['type'] for question in questions for answer in answers
                     if question['id'] == answer['question_id']]
     return Counter(answer_types)
+
+
+def remove_from_data(listed_dicts, sentence_id):
+    new_list = [sentence for sentence in listed_dicts if int(sentence_id) != sentence['id']]
+    listed_dicts = new_list
